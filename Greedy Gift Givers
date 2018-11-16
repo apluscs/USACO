@@ -1,8 +1,16 @@
-/* A group of NP (2 ≤ NP ≤ 10) uniquely named friends has decided to exchange gifts of money. Each of these friends might or might not give some money to some or all of the other friends (although some might be cheap and give to no one). Likewise, each friend might or might not receive money from any or all of the other friends. Your goal is to deduce how much more money each person receives than they give.
+/* A group of NP (2 ≤ NP ≤ 10) uniquely named friends has decided to exchange gifts of money. Each of these friends might or 
+might not give some money to some or all of the other friends (although some might be cheap and give to no one). Likewise, each 
+friend might or might not receive money from any or all of the other friends. Your goal is to deduce how much more money each 
+person receives than they give.
 
-The rules for gift-giving are potentially different than you might expect. Each person goes to the bank (or any other source of money) to get a certain amount of money to give and divides this money evenly among all those to whom he or she is giving a gift. No fractional money is available, so dividing 7 among 2 friends would be 3 each for the friends with 1 left over – that 1 left over goes into the giver's "account". All the participants' gift accounts start at 0 and are decreased by money given and increased by money received.
+The rules for gift-giving are potentially different than you might expect. Each person goes to the bank (or any other source of 
+money) to get a certain amount of money to give and divides this money evenly among all those to whom he or she is giving a 
+gift. No fractional money is available, so dividing 7 among 2 friends would be 3 each for the friends with 1 left over – that 1 
+left over goes into the giver's "account". All the participants' gift accounts start at 0 and are decreased by money given and 
+increased by money received.
 
-In any group of friends, some people are more giving than others (or at least may have more acquaintances) and some people have more money than others.
+In any group of friends, some people are more giving than others (or at least may have more acquaintances) and some people have 
+more money than others.
 
 Given:
 
@@ -24,13 +32,17 @@ NP+2..end 	NP groups of lines organized like this:
     The amount of money (in the range 0..2000) to be divided into gifts by the giver
     NGi (1 ≤ NGi ≤ NP), the number of people to whom the giver will give gifts 
 
-If NGi is nonzero, each of the next NGi lines lists the name of a recipient of a gift; recipients are not repeated in a single giver's list. 
+If NGi is nonzero, each of the next NGi lines lists the name of a recipient of a gift; recipients are not repeated in a single 
+giver's list. 
 
 OUTPUT FORMAT
 
-The output is NP lines, each with the name of a person followed by a single blank followed by the net gain or loss (final_money_value - initial_money_value) for that person. The names should be printed in the same order they appear starting on line 2 of the input.
+The output is NP lines, each with the name of a person followed by a single blank followed by the net gain or loss 
+(final_money_value - initial_money_value) for that person. The names should be printed in the same order they appear starting on 
+line 2 of the input.
 
-All gifts are integers. Each person gives the same integer amount of money to each friend to whom any money is given, and gives as much as possible that meets this constraint. Any money not given is kept by the giver. 
+All gifts are integers. Each person gives the same integer amount of money to each friend to whom any money is given, and gives 
+as much as possible that meets this constraint. Any money not given is kept by the giver. 
 
 SAMPLE INPUT (file gift1.in)
 
