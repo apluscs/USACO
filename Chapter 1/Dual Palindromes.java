@@ -1,4 +1,4 @@
- A number that reads the same from right to left as when read from left to right is called a palindrome. The number 12321 is a 
+ /*A number that reads the same from right to left as when read from left to right is called a palindrome. The number 12321 is a 
  palindrome; the number 77778 is not. Of course, palindromes have neither leading nor trailing zeroes, so 0220 is not a p
  alindrome.
 
@@ -30,7 +30,7 @@ SAMPLE OUTPUT (file dualpal.out)
 26
 27
 28
-
+*/
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
