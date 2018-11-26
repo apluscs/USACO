@@ -1,4 +1,4 @@
-Farmer John has N hills on his farm (1 <= N <= 1,000), each with an integer elevation in the range 0 .. 100. In the winter, 
+/*Farmer John has N hills on his farm (1 <= N <= 1,000), each with an integer elevation in the range 0 .. 100. In the winter, 
 since there is abundant snow on these hills, FJ routinely operates a ski training camp.
 
 Unfortunately, FJ has just found out about a new tax that will be assessed next year on farms used as ski training camps. Upon 
@@ -33,8 +33,9 @@ SAMPLE OUTPUT (file skidesign.out):
 18
 
 OUTPUT DETAILS:
-FJ keeps the hills of heights 4, 20, and 21 as they are. He adds mass to the hill of height 1, bringing it to height 4 (cost = 3^2 = 9). He shortens the hill of height 24 to height 21, also at a cost of 3^2 = 9. 
-
+FJ keeps the hills of heights 4, 20, and 21 as they are. He adds mass to the hill of height 1, bringing it to height 4 (cost = 
+3^2 = 9). He shortens the hill of height 24 to height 21, also at a cost of 3^2 = 9. 
+*/
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
