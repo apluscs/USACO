@@ -1,4 +1,4 @@
-The Merry Milk Makers company buys milk from farmers, packages it into attractive 1- and 2-Unit bottles, and then sells that 
+/*The Merry Milk Makers company buys milk from farmers, packages it into attractive 1- and 2-Unit bottles, and then sells that 
 milk to grocery stores so we can each start our day with delicious cereal and milk.
 
 Since milk packaging is such a difficult business in which to make money, it is important to keep the costs as low as possible. 
@@ -67,7 +67,7 @@ bought 	Price *
 8 	80 	40 	8*40 	320 	Did not buy all 80 units!
 6 	30 	30 	6*30 	180
 Total	180 	100 		630 	Cheapest total cost
-
+*/
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
