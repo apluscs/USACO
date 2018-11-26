@@ -1,4 +1,4 @@
-Farmer John's hobby of conducting high-energy physics experiments on weekends has backfired, causing N wormholes (2 <= N <= 12, 
+/*Farmer John's hobby of conducting high-energy physics experiments on weekends has backfired, causing N wormholes (2 <= N <= 12, 
 N even) to materialize on his farm, each located at a distinct point on the 2D map of his farm (the x,y coordinates are both 
 integers).
 
@@ -57,7 +57,7 @@ Similarly, with the same starting points, Bessie can get stuck in a cycle if the
 and comes out at WH#1, she then walks to WH#2 which transports here to WH#4 which directs her towards WH#3 again for a cycle).
 
 Only the pairings 1-4 and 2-3 allow Bessie to walk in the +x direction from any point in the 2D plane with no danger of cycling. 
-
+*/
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
