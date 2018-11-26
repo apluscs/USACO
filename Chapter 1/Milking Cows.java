@@ -1,4 +1,4 @@
-Three farmers rise at 5 am each morning and head for the barn to milk three cows. The first farmer begins milking his cow at 
+/*Three farmers rise at 5 am each morning and head for the barn to milk three cows. The first farmer begins milking his cow at 
 time 300 (measured in seconds after 5 am) and ends at time 1000. The second farmer begins at time 700 and ends at time 1200. The 
 third farmer begins at time 1500 and ends at time 2100. The longest continuous time during which at least one farmer was milking 
 a cow was 900 seconds (from 300 to 1200). The longest time no milking was done, between the beginning and the ending of all 
@@ -26,6 +26,7 @@ A single line with two integers that represent the longest continuous time of mi
 
 SAMPLE OUTPUT (file milk2.out)
 900 300
+*/
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
