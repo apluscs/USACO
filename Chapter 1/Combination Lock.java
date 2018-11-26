@@ -1,4 +1,4 @@
-Farmer John's cows keep escaping from his farm and causing mischief. To try and prevent them from leaving, he purchases a fancy 
+/*Farmer John's cows keep escaping from his farm and causing mischief. To try and prevent them from leaving, he purchases a fancy 
 combination lock to keep his cows from opening the pasture gate.
 
 Knowing that his cows are quite clever, Farmer John wants to make sure they cannot easily open the lock by simply trying many 
@@ -65,7 +65,7 @@ Here's a list:
 2,2,1  3,3,4  3,8,7  5,4,5  6,4,8  7,5,6  2,50,5 50,1,2  50,50,4
 2,2,2  3,3,5  3,8,8  5,4,6  6,4,9  7,5,7  3,50,1 50,1,3  50,50,5
 2,2,3  3,4,1  3,8,9  5,4,7  6,5,5  7,5,8
-
+*/
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
