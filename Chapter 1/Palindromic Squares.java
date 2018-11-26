@@ -1,4 +1,4 @@
-Palindromes are numbers that read the same forwards as backwards. The number 12321 is a typical palindrome.
+/*Palindromes are numbers that read the same forwards as backwards. The number 12321 is a typical palindrome.
 
 Given a number base B (2 <= B <= 20 base 10), print all the integers N (1 <= N <= 300 base 10) such that the square of N is 
 palindromic when expressed in base B; also print the value of that palindromic square. Use the letters 'A', 'B', and so on to 
@@ -29,7 +29,7 @@ SAMPLE OUTPUT (file palsquare.out)
 202 40804
 212 44944
 264 69696
-
+*/
 
 import java.io.BufferedWriter;
 import java.io.File;
