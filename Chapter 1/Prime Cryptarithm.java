@@ -1,4 +1,4 @@
-(This poorly named task has nothing to do with prime numbers or even, really, prime digits. Sorry 'bout that.)
+/*(This poorly named task has nothing to do with prime numbers or even, really, prime digits. Sorry 'bout that.)
 
 A cryptarithm is usually presented as a pencil-and-paper task in which the solver is required to substitute a digit for each of 
 the asterisks (or, often, letters) in the manual evaluation of an arithmetic term or expression so that the consistent 
@@ -84,7 +84,7 @@ Why 222x23 doesn't work:
     4 4 4     <-- OK:  three digits, all members of {2, 3, 4, 6, 8}
   ---------
     5 1 0 6   <-- NOT OK: four digits (good), but 5, 1, and 0 are not in {2, 3, 4, 6, 8}
-
+*/
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
