@@ -1,4 +1,4 @@
- Among the large Wisconsin cattle ranchers, it is customary to brand cows with serial numbers to please the Accounting 
+/* Among the large Wisconsin cattle ranchers, it is customary to brand cows with serial numbers to please the Accounting 
  Department. The cow hands don't appreciate the advantage of this filing system, though, and wish to call the members of their 
  herd by a pleasing name rather than saying, "C'mon, #4734, get along."
 
@@ -40,7 +40,7 @@ OUTPUT FORMAT
 A list of valid names that can be generated from the input, one per line, in ascending alphabetical order.
 
 SAMPLE OUTPUT (file namenum.out)
-GREG
+GREG*/
 
 
 import java.io.BufferedReader;
