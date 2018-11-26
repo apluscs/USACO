@@ -1,4 +1,4 @@
-It was a dark and stormy night that ripped the roof and gates off the stalls that hold Farmer John's cows. Happily, many of the 
+/*It was a dark and stormy night that ripped the roof and gates off the stalls that hold Farmer John's cows. Happily, many of the 
 cows were on vacation, so the barn was not completely full.
 
 The cows spend the night in stalls that are arranged adjacent to each other in a long line. Some stalls have cows in them; some 
@@ -59,6 +59,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.StringTokenizer;
+*/
 
 public class barn1 {
 
