@@ -1,4 +1,4 @@
- A square pattern of size N x N (1 <= N <= 10) black and white square tiles is transformed into another square pattern. Write a 
+ /*A square pattern of size N x N (1 <= N <= 10) black and white square tiles is transformed into another square pattern. Write a 
  program that will recognize the minimum transformation that has been applied to the original pattern given the following list of p
  ossible transformations:
 
@@ -34,7 +34,7 @@ from the `before' representation to the `after' representation.
 
 SAMPLE OUTPUT (file transform.out)
 1
-
+*/
 
 
 import java.io.BufferedReader;
