@@ -1,4 +1,4 @@
-Farmer John has three milking buckets of capacity A, B, and C liters. Each of the numbers A, B, and C is an integer from 1 
+/*Farmer John has three milking buckets of capacity A, B, and C liters. Each of the numbers A, B, and C is an integer from 1 
 through 20, inclusive. Initially, buckets A and B are empty while bucket C is full of milk. Sometimes, FJ pours milk from one 
 bucket to another until the bucket being poured into is filled or the bucket being poured is empty. Once begun, a pour must be 
 completed, of course. Being thrifty, no milk may be tossed out.
@@ -23,7 +23,7 @@ SAMPLE INPUT (file milk3.in)
 
 SAMPLE OUTPUT (file milk3.out)
 5 6 7 8 9 10
-
+*/
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
