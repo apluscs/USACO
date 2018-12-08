@@ -1,4 +1,4 @@
-The structure of some biological objects is represented by the sequence of their constituents, where each part is denoted by an 
+/*The structure of some biological objects is represented by the sequence of their constituents, where each part is denoted by an 
 uppercase letter. Biologists are interested in decomposing a long sequence into shorter sequences called primitives.
 
 We say that a sequence S can be composed from a given set of primitives P if there is a some sequence of (possibly repeated) 
