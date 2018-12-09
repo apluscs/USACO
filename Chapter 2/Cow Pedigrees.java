@@ -63,7 +63,9 @@ public class nocows {
 		for(int i = 2; i <= K; i++){
 			for(int j = 3; j <= N; j += 2){	//no way to have an even #nodes
 				for(int k = 1; k <= j - 2; k++){
-					peds[i][j] += (peds[i-1][k] * peds[i-1][j-k-1]);	//double counts most possibilities because the first number is the left orientation, which can be the right orientation if reflected left to right
+					peds[i][j] += (peds[i-1][k] * peds[i-1][j-k-1]);	//double counts most 
+					//possibilities because the first number is the left orientation, which can be the right
+					//orientation if reflected left to right. this generates another possibility
 					peds[i][j] %= 9901;
 				}
 			}
