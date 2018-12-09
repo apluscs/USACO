@@ -66,6 +66,9 @@ public class nocows {
 					peds[i][j] += (peds[i-1][k] * peds[i-1][j-k-1]);	//double counts most 
 					//possibilities because the first number is the left orientation, which can be the right
 					//orientation if reflected left to right. this generates another possibility
+					
+					//furthermore, the column numbers don't add up to j because they do not count the top 
+					//node, only the 2 subtrees stemming from that node
 					peds[i][j] %= 9901;
 				}
 			}
