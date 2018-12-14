@@ -1,4 +1,4 @@
- Some companies are partial owners of other companies because they have acquired part of their total shares of stock. For 
+/* Some companies are partial owners of other companies because they have acquired part of their total shares of stock. For 
  example, Ford at one point owned 12% of Mazda. It is said that a company A controls company B if at least one of the following 
  conditions is satisfied:
 
