@@ -78,7 +78,8 @@ public class camelot {
         for (int pi = ksr; pi <= ker; pi++)
           for (int pj = ksc; pj <= kec; pj++) // tests each "pickup" location for the king
             for (int k = 1; k <= kn; k++) // any potential transporter
-            {
+            {// king dist to pickup+knight dist to pickup+pickup dist to answer -
+              // knight dist to answer (what would have happened if they skipped the pickup)
               int kingToPickup = Math.max(Math.abs(king[0] - pi), Math.abs(king[1] - pj));
               int tmp = kingToPickup + m[kni[k][0]][kni[k][1]][pi][pj] + m[pi][pj][ar][ac]
                   - m[kni[k][0]][kni[k][1]][ar][ac];
