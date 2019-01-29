@@ -1,0 +1,50 @@
+Here are the test data inputs:
+
+------- test 1 [length 9 bytes] ----
+3
+3
+6
+10
+My output: 17
+------- test 2 [length 6 bytes] ----
+2
+2
+3
+My output: 1
+------- test 3 [length 4 bytes] ----
+1
+1
+My output: 0
+------- test 4 [length 18 bytes] ----
+4
+252
+250
+254
+256
+My output: 0
+------- test 5 [length 10 bytes] ----
+2
+255
+254
+My output: 64261
+------- test 6 [length 22 bytes] ----
+5
+251
+252
+250
+254
+256
+My output: 10749
+------- test 7 [length 43 bytes] ----
+10
+238
+240
+242
+244
+246
+248
+250
+252
+254
+255
+My output: 3585
