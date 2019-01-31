@@ -47,26 +47,29 @@ public class stall4 {
   public static int maxFlow() {
     int result = 0;
     while (refreshBFS()) {
-      result += sendFlow(s, Integer.MAX_VALUE);
+      if (sendFlow(s)) {
+        result++;
+      }
     }
     return result;
   }
-  public static int sendFlow(int v, int flow) {
-    if (v == t) return flow;
+
+  public static boolean sendFlow(int v) {
+    if (v == t) {
+      return true; // max capacity is 1 for each arc, so max flow for any gust is 1
+    }
     for (int i = 0; i <= t; i++) {
-      if (adj[v][i] > 0 && levels[i] == levels[v] + 1) {
-        int myFlow = Math.min(flow, adj[v][i]);
-        int tempFlow = sendFlow(i, myFlow);
-        if (tempFlow > 0) {
-          adj[v][i] -= tempFlow;
-          adj[i][v] += tempFlow;
-          return tempFlow;
+      if (adj[v][i] == 1 && levels[i] == levels[v] + 1) {
+        boolean tempFlow = sendFlow(i);
+        if (tempFlow) {
+          adj[v][i]--;
+          adj[i][v]++;
+          return true;
         }
       }
     }
-    return 0;
+    return false; // if this path doesn't reach sink
   }
-  
   public static boolean refreshBFS() {
     Queue<Integer> toVis = new LinkedList<>();
     Arrays.fill(levels, 1000);
@@ -75,7 +78,7 @@ public class stall4 {
     while (!toVis.isEmpty()) {
       int curr = toVis.poll();
       for (int i = 0; i <= t; i++) {
-        if (adj[curr][i] > 0 && levels[i] == 1000) {
+        if (adj[curr][i] == 1 && levels[i] == 1000) {
           levels[i] = levels[curr] + 1;
           toVis.add(i);
         }
