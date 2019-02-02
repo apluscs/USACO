@@ -34,9 +34,8 @@ public class race3 {
       findUnavoid();
       for (int u : unavoid) {
         BitSet[] acc = findAccess(u);
-        if (acc.length == 1) continue;  //no points in common!
-        if (acc[0].cardinality() + acc[1].cardinality() == N + 1) 
-          splits.add(u);    //together, all points must be accessible
+        if (acc.length != 1)
+          splits.add(u); // no points in common! no points in C2 are the same as any in C1
       }
       out.print(unavoid.size());
       for (int i = 0; i < unavoid.size(); i++)  out.print(" " + unavoid.get(i));
