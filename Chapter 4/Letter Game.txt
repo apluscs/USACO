@@ -1,0 +1,75 @@
+Note: I used lgame.dict as a dictionary for testing. I can't access the dictionary USACO used, but I'd say testing your code 
+against mine using the dictionary I uploaded would be surely effective!
+
+------- test 1 [length 8 bytes] ----
+jicuzza
+My output:
+32
+jacuzzi
+------- test 2 [length 6 bytes] ----
+cuqak
+My output:
+23
+quack
+------- test 3 [length 6 bytes] ----
+pofax
+My output:
+16
+fox
+------- test 4 [length 8 bytes] ----
+rammoxy
+My output:
+29
+mom xray
+------- test 5 [length 7 bytes] ----
+culatu
+My output:
+19
+cul tau
+------- test 6 [length 8 bytes] ----
+gvutvac
+My output:
+11
+gut
+tug
+------- test 7 [length 8 bytes] ----
+bhruthr
+My output:
+14
+hub
+huh
+------- test 8 [length 6 bytes] ----
+wagje
+My output:
+15
+jaw
+------- test 9 [length 7 bytes] ----
+thryst
+My output:
+12
+thy
+------- test 10 [length 8 bytes] ----
+fnupfig
+My output:
+29
+gin puff
+puffing
+------- test 11 [length 8 bytes] ----
+bobdead
+My output:
+24
+abbe odd
+babe odd
+bad bode
+bob dead
+bode dab
+dado ebb
+------- test 12 [length 8 bytes] ----
+abcdefg
+My output:
+23
+bag fed
+bed fag
+beg fad
+deb fag
+fed gab
