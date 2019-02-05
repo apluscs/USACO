@@ -43,7 +43,45 @@ public class shuttle {
       out.println(result);
     }
   }
-
+  public static void easySol(PrintWriter out) {
+    int loc = N;
+    for (int lv = 2; lv <= N + 1; lv++) {
+      if (lv % 2 == 0) {    //alternating pattern of left and right, each run longer than last
+        for (int i = 0; i < lv; i++) {
+          out.print(loc + " ");
+          loc += 2;
+        }
+        loc--;
+      } else {
+        for (int i = 0; i < lv; i++) {
+          out.print(loc + " ");
+          loc -= 2;
+        }
+        loc++;
+      }
+    }
+    if (loc == 0) {
+      loc = 2;
+    } else {    //get loc back in bounds
+      loc = 2 * N;
+    }
+    for (int lv = N; lv >= 1; lv--) {
+      if (lv % 2 == 0) {    //now each run is smaller than the last
+        for (int i = 0; i < lv; i++) {
+          out.print(loc + " ");
+          loc += 2;
+        }
+        loc -= 3;
+      } else {
+        for (int i = 0; i < lv; i++) {
+          out.print(loc + " ");
+          loc -= 2;
+        }
+        loc += 3;
+      }
+    }
+  }
+  
   public static void minMoves() {
     Queue<String[]> toVis = new LinkedList<>();
     HashSet<String> vis = new HashSet<>();
