@@ -1,12 +1,3 @@
-package usaco;
-
-//@formatter:off
-/*
-ID: the.cla1
-LANG: JAVA
-TASK: starry
-*/
-//@formatter:on
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -34,10 +25,6 @@ public class starry {
         for (int j = 0; j < W; j++)
           grid[i][j] = line.charAt(j) - '0';
       }
-      // for (int[] s : grid) {
-      // System.out.println(Arrays.toString(s));
-      // }
-      // System.out.println();
       for (int i = 0; i < H; i++)
         for (int j = 0; j < W; j++)
           if (grid[i][j] == 1 && sky[i][j] == 0) { // found a NEW cluster
@@ -45,9 +32,6 @@ public class starry {
             clus[cid] = new Cluster(dm, cid);
             cid++;
           }
-      // for (int[] s : sky) {
-      // System.out.println(Arrays.toString(s));
-      // }
 
       for (int i = 1; i < cid; i++) {
         boolean match = false;
@@ -55,28 +39,17 @@ public class starry {
           Cluster a = clus[i];
           Cluster b = clus[j];
           if (a.h == b.h && a.w == b.w && compare(a.norm, b.norm)) {
-            // System.out.println(
-            // "norm match " + Arrays.toString(clus[i].loc) + " " + Arrays.toString(clus[j].loc));
             clus[i].pid = clus[j].pid;
             match = true;
             break;
           } else if (a.h == b.w && a.w == b.h && compare(a.rot, b.norm)) {
-            // System.out.println(
-            // "rota match " + Arrays.toString(clus[i].loc) + " " + Arrays.toString(clus[j].loc));
             clus[i].pid = clus[j].pid;
             match = true;
             break;
           }
         }
-        if (!match)
-          clus[i].pid = cpid++;
+        if (!match) clus[i].pid = cpid++;
       }
-      // for (int i = 1; i < cid; i++) {
-      // System.out.println(Arrays.toString(clus[i].loc) + " " + clus[i].h + " " + clus[i].w);
-      // clus[i].printNorm();
-      // clus[i].printRot();
-      // System.out.println(clus[i].pid);
-      // }
       for (int c = 1; c < cid; c++) {
         Cluster cl = clus[c];
         for (int i = 0; i < cl.h; i++)
@@ -84,10 +57,13 @@ public class starry {
             if (cl.norm[i][j] == 1) // star exists here, need to match to position in sky
               res[i + cl.loc[0]][j + cl.loc[1]] = (char) (cl.pid + 'a' - 1);
       } //@formatter:off
-      for (int i = 0; i < H; i++) for (int j = 0; j < W; j++)
+      for (int i = 0; i < H; i++) {
+        for (int j = 0; j < W; j++){
           if (res[i][j] != 0) out.print(res[i][j]);
           else out.print("0");
-      out.println();
+        }
+        out.println();
+      }
     }
   }
 
@@ -95,7 +71,6 @@ public class starry {
     int h = a.length;
     int w = a[0].length;
     boolean match = true;
-    // System.out.println(a.h + " " + a.w);
     for (int i = 0; i < h; i++) for (int j = 0; j < w; j++)  // reflect both
         if (a[i][j] != b[h - i - 1][w - j - 1]) match = false;
     if (match) return true;
@@ -129,7 +104,7 @@ public class starry {
       s=Math.max(s, i);
       e=Math.max(e, j);
       w=Math.min(w, j);
-      sky[i][j] = cid;
+      sky[i][j] = cid;  //check 8 possible neighbors
       if (i != 0 && grid[i - 1][j] == 1)                    toVis.add(new int[] {i - 1, j});
       if (i != 0 && j != W - 1 && grid[i - 1][j + 1] == 1)  toVis.add(new int[] {i - 1, j + 1});
       if (j != W - 1 && grid[i][j + 1] == 1)                toVis.add(new int[] {i, j + 1});
@@ -160,14 +135,6 @@ public class starry {
           norm[i][j]=1;
           rot[j][i]=1; //rows become columns
         }
-    }
-    public void printNorm(){
-      for(int[] n:norm)System.out.println(Arrays.toString(n));
-      System.out.println();
-    }
-    public void printRot(){
-      for(int[] n:rot)System.out.println(Arrays.toString(n));
-      System.out.println();
     }
   }
 }
