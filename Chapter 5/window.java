@@ -1,11 +1,3 @@
-// package usaco;
-//@formatter:off
-/*
-ID: the.cla1
-LANG: JAVA
-TASK: window
-*/
-//@formatter:on
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -24,9 +16,7 @@ public class window {
     while (in.ready()) {
       String line=in.readLine();
       int id=line.charAt(2)-'0';
-//      System.out.println(id);
       char c=line.charAt(0);
-//      System.out.println(c);
       switch(c){
         case 't':
           wdws[id].pos = top++;
@@ -45,16 +35,13 @@ public class window {
         case 's': 
           Window base = wdws[id];
           cPos = wdws[id].pos; // depth of desired window
-//          System.out.println("cPos: "+cPos);
           result=0;
           int ar = (base.u - base.d) * (base.r - base.l);
           dfs(base.u, base.d, base.r, base.l, 0); // start at beginning of window array
           double res = 100.0 * result / ar;
           out.println(String.format("%.3f", res));
       }
-//      wdws[id].print();
     }
-
     in.close();
     out.close();
   }
@@ -62,7 +49,6 @@ public class window {
   public static void dfs(int u, int d, int r, int l, int ind) {
     if (ind == 76) {    //reached end of window array
       result += (u - d) * (r - l);
-      // System.out.println((u - d) * (r - l));
       return;
     }
     if (wdws[ind] == null) {    //no window in this spot, try next one
@@ -70,10 +56,7 @@ public class window {
       return;
     }
     Window curr = wdws[ind];
-    // System.out.println("u: " + u + ", d: " + d + ", l: " + l + ", r:" + r + ", ind: " + ind);
-    // curr.print();
     if (curr.pos <= cPos || curr.u <= d || curr.d >= u || curr.l >= r || curr.r <= l) {
-      // System.out.println("no overlap");
       dfs(u, d, r, l, ind + 1);     //curr is beneath "base" window or it's not even covering base
       return;
     }
@@ -84,6 +67,7 @@ public class window {
     if (curr.r < r) dfs(tU, tD, r, curr.r, ind + 1);
     if (curr.l > l) dfs(tU, tD, curr.l, l, ind + 1);
   }
+  
   private static class Window{
     int u, d, r, l, pos;
     Window(int x1,int y1,int x2,int y2){
@@ -92,9 +76,6 @@ public class window {
       d = Math.min(y1, y2);
       u = Math.max(y1, y2); 
       pos=top++;
-    }
-    public void print(){
-      System.out.println(u + " " + d + " " + l + " " + r + " " + " " + pos + " ");
     }
   }
 }
