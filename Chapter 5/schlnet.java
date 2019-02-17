@@ -54,7 +54,7 @@ public class schlnet {
         continue;
       }
       out.println(res1);
-      out.println(Math.max(res1, res2) + "\n");
+      out.println(Math.max(res1, res2) + "\n");   //every SCC needs an incoming arrow no matter what
     }
   }
 
