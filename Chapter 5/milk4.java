@@ -1,12 +1,3 @@
-package usaco;
-
-//@formatter:off
-/*
-ID: the.cla1
-LANG: JAVA
-TASK: milk4
-*/
-//@formatter:on
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -27,37 +18,29 @@ public class milk4 {
   public static void main(String[] args) throws IOException {
     try (BufferedReader in = new BufferedReader(new FileReader("milk4.in"));
         PrintWriter out = new PrintWriter(new File("milk4.out"));) {
-      for (int t = 1; t <= 10; t++) {
-        in.readLine();
       Q = Integer.parseInt(in.readLine());
-        P = Integer.parseInt(in.readLine());
-        found = false;
+      P = Integer.parseInt(in.readLine());
+      found = false;
       pls = new int[P];
       result = new ArrayList<>();
-        for (int i = 0; i < P; i++)
-        pls[i] = Integer.parseInt(in.readLine());
-        Arrays.sort(pls); // ensures that lowest value pails come first
+      for (int i = 0; i < P; i++) pls[i] = Integer.parseInt(in.readLine());
+      Arrays.sort(pls); // ensures that lowest value pails come first
       for (int d = 1; d <= P; d++) {
         use = new ArrayList<>();
-          dfs(d, 0); // for each possible #pails
-          if (found)
-          break;
+        dfs(d, 0); // for each possible #pails
+        if (found)
+        break;
       }
-        System.out.println("Answer: " + result);
-        out.print("Test #" + t + ": " + result.size());
-        for (int r : result)
-        out.print(" " + r);
+      out.print(result.size());
+      for (int r : result)
+      out.print(" " + r);
       out.println();
-      }
     }
   }
 
   public static void dfs(int maxDepth, int curr) {
-    // System.out.println(use);
-    if (found)
-      return;
+    if (found) return;
     if (use.size() == maxDepth) { // filled up to maxDepth
-      // System.out.println(use);
       boolean[] dp = new boolean[Q + 1];
       dp[0] = true;
       for (int i = 1; i <= Q; i++)
@@ -72,8 +55,7 @@ public class milk4 {
       }
       return;
     }
-    if (curr == P)
-      return;
+    if (curr == P) return;
     use.add(pls[curr]); // try with this size
     dfs(maxDepth, curr + 1);
     use.remove(use.size() - 1); // try without this size
