@@ -1,4 +1,5 @@
 // package usaco;
+//old version... not working !
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -37,9 +38,8 @@ public class revegetate {
       if (N == 3) {
         int res = solve();
         out.print('1');
-        for (int i = 0; i < res; i++) {
+        for (int i = 0; i < res; i++) 
           out.print('0');
-        }
         out.println();
       }
       else
@@ -60,34 +60,24 @@ public class revegetate {
       ranks[pi]++;
       p[pj] = pi;
     }
-    // System.out.println(Arrays.toString(p));
     return 1;
   }
 
   public static int solve() {
     int total = N;
-    for (int[] pair : pairs) {
+    for (int[] pair : pairs) 
       if (union(pair[0], pair[1]) == 1)
         total--;
-    }
-    // System.out.println(Arrays.toString(p));
-    // System.out.println(Arrays.toString(ranks));
-    // System.out.println(total);
-    for (int i = 1; i <= N; i++) {
-      if (p[i] == -1) {
+    for (int i = 1; i <= N; i++) 
+      if (p[i] == -1) 
         total--;
-      }
-    }
     return total;
   }
 
   public static int find(int i) {
-    if (p[i] == i) {
-      // System.out.println("parent of " + i + " is " + p[i]);
+    if (p[i] == i) 
       return i;
-    }
     p[i] = find(p[i]);
-    // System.out.println("parent of " + i + " is " + p[i]);
     return p[i];
   }
 }
