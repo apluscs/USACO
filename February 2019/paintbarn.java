@@ -1,5 +1,3 @@
-package usaco;
-
 // February 2019 Silver
 // redo with sweepline
 import java.io.BufferedReader;
@@ -35,27 +33,20 @@ public class paintbarn {
         minY = Math.min(minY, y1);
         maxX = Math.max(maxX, x2);
         maxY = Math.max(maxY, y2);
-        fill(x1, y1, x2, y2);
+        fill(x1, y1, x2, y2); //brutal force :(
       }
       int result = 0;
-      for (int i = minX; i <= maxX; i++) {
-        // System.out.println(Arrays.toString(mat[i]));
-        for (int j = minY; j <= maxY; j++) {
-          if (mat[i][j] == K) {
+      for (int i = minX; i <= maxX; i++) 
+        for (int j = minY; j <= maxY; j++) 
+          if (mat[i][j] == K)
             result++;
-          }
-        }
-      }
       out.println(result);
     }
-
   }
 
   public static void fill(int x1, int y1, int x2, int y2) {
-    for (int i = x1; i < x2; i++) {
-      for (int j = y1; j < y2; j++) {
+    for (int i = x1; i < x2; i++) 
+      for (int j = y1; j < y2; j++) 
         mat[i][j]++;
-      }
-    }
   }
 }
