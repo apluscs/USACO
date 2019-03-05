@@ -1,0 +1,61 @@
+package usaco;
+
+// February 2019 Silver
+// redo with sweepline
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.StringTokenizer;
+
+public class paintbarn {
+  public static int N, K;
+  public static int[][] mat;
+
+  public static void main(String[] args) throws IOException {
+    try (BufferedReader in = new BufferedReader(new FileReader("paintbarn.in"));
+        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("paintbarn.out")));) {
+      StringTokenizer st = new StringTokenizer(in.readLine());
+      N = Integer.parseInt(st.nextToken());
+      K = Integer.parseInt(st.nextToken());
+      mat = new int[1001][1001];
+      int minX = 2000000;
+      int minY = 2000000;
+      int maxX = 0;
+      int maxY = 0;
+      for (int i = 0; i < N; i++) {
+        st = new StringTokenizer(in.readLine());
+        int x1 = Integer.parseInt(st.nextToken());
+        int y1 = Integer.parseInt(st.nextToken());
+        int x2 = Integer.parseInt(st.nextToken());
+        int y2 = Integer.parseInt(st.nextToken());
+        minX = Math.min(minX, x1);
+        minY = Math.min(minY, y1);
+        maxX = Math.max(maxX, x2);
+        maxY = Math.max(maxY, y2);
+        fill(x1, y1, x2, y2);
+      }
+      int result = 0;
+      for (int i = minX; i <= maxX; i++) {
+        // System.out.println(Arrays.toString(mat[i]));
+        for (int j = minY; j <= maxY; j++) {
+          if (mat[i][j] == K) {
+            result++;
+          }
+        }
+      }
+      out.println(result);
+    }
+
+  }
+
+  public static void fill(int x1, int y1, int x2, int y2) {
+    for (int i = x1; i < x2; i++) {
+      for (int j = y1; j < y2; j++) {
+        mat[i][j]++;
+      }
+    }
+  }
+}

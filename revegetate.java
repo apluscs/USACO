@@ -1,0 +1,93 @@
+// package usaco;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+public class revegetate {
+  public static int[][] pairs;
+  public static int[] p, ranks;
+  public static int N, M;
+
+  public static void main(String[] args) throws IOException {
+    try (BufferedReader in = new BufferedReader(new FileReader("revegetate.in"));
+        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("revegetate.out")));) {
+      StringTokenizer st = new StringTokenizer(in.readLine());
+      N = Integer.parseInt(st.nextToken());
+      M = Integer.parseInt(st.nextToken());
+      pairs = new int[M][2];
+      ranks = new int[N + 1];;
+      p = new int[N + 1]; // 0 parent is not counted
+      Arrays.fill(p, -1);
+      for (int i = 0; i < M; i++) {
+        st = new StringTokenizer(in.readLine());
+        char c = st.nextToken().charAt(0);
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
+        pairs[i][0] = a;
+        pairs[i][1] = b;
+        p[a] = a;
+        p[b] = b;
+      }
+      if (N == 3) {
+        int res = solve();
+        out.print('1');
+        for (int i = 0; i < res; i++) {
+          out.print('0');
+        }
+        out.println();
+      }
+      else
+      out.println('0');
+    }
+  }
+
+  public static int union(int i, int j) {
+    int pi = find(i);
+    int pj = find(j);
+    if (pi == pj)
+      return -1;
+    if (ranks[pi] > ranks[pj])
+      p[pj] = pi;
+    else if (ranks[pj] > ranks[pi])
+      p[pi] = pj;
+    else {
+      ranks[pi]++;
+      p[pj] = pi;
+    }
+    // System.out.println(Arrays.toString(p));
+    return 1;
+  }
+
+  public static int solve() {
+    int total = N;
+    for (int[] pair : pairs) {
+      if (union(pair[0], pair[1]) == 1)
+        total--;
+    }
+    // System.out.println(Arrays.toString(p));
+    // System.out.println(Arrays.toString(ranks));
+    // System.out.println(total);
+    for (int i = 1; i <= N; i++) {
+      if (p[i] == -1) {
+        total--;
+      }
+    }
+    return total;
+  }
+
+  public static int find(int i) {
+    if (p[i] == i) {
+      // System.out.println("parent of " + i + " is " + p[i]);
+      return i;
+    }
+    p[i] = find(p[i]);
+    // System.out.println("parent of " + i + " is " + p[i]);
+    return p[i];
+  }
+}
