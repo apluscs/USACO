@@ -1,4 +1,3 @@
-package usaco;
 // February 2019 Silver
 // redo with shortcut (min - count cows in place, max - count gaps)
 
@@ -39,7 +38,6 @@ public class herding {
     int min = Integer.MAX_VALUE;
     int max = Integer.MIN_VALUE;
     int temp = getCost(0, N - 1, leftCows, rightCows);
-    // System.out.println("default " + temp);
     if (temp != -1) {
       min = Math.min(min, temp);
       max = Math.max(max, temp);
@@ -49,7 +47,6 @@ public class herding {
       leftCows += cows[i - N] ? 1 : 0;
       rightCows -= cows[i] ? 1 : 0;
       temp = getCost(i - N + 1, i, leftCows, rightCows);
-      // System.out.println("ldex " + (i - N + 1) + ", rdex " + i + ", = " + temp);
       if (temp == -1)
         continue;
       min = Math.min(min, temp);
