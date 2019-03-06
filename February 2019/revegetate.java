@@ -1,5 +1,3 @@
-// package usaco;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -24,8 +22,7 @@ public class revegetate {
       M = Integer.parseInt(st.nextToken());
       same = new List[100001];
       diff = new List[100001];
-      fields = new int[100001];
-      // Arrays.fill(fields, -1); // mark as unused
+      fields = new int[100001]; 
       for (int i = 1; i <= N; i++) {
         same[i] = new ArrayList<Integer>();
         diff[i] = new ArrayList<Integer>();
@@ -35,7 +32,6 @@ public class revegetate {
         char c = st.nextToken().charAt(0);
         int a = Integer.parseInt(st.nextToken());
         int b = Integer.parseInt(st.nextToken());
-        // fields[a] = fields[b] = 0;
         if (c == 'S') {
           same[a].add(b);
           same[b].add(a);
@@ -46,12 +42,10 @@ public class revegetate {
       }
       int res = solve();
       if (!impossible) {
-//        out.println(res + " " + impossible);
         StringBuilder sb = new StringBuilder();
         sb.append('1');
-        for (int i = 0; i < res; i++) {
+        for (int i = 0; i < res; i++) 
           sb.append('0');
-        }
         out.println(sb.toString());
       }
       else
@@ -79,15 +73,11 @@ public class revegetate {
 
   public static int solve() {
     int group = 0;
-    // System.out.println(Arrays.toString(fields));
-    for (int i = 1; i <= N; i++) {
+    for (int i = 1; i <= N; i++) 
       if (fields[i] == 0) {
-//        System.out.println(group);
         visit(i, 1);
-        group++;
-    }
-  }
+        group++;    //note: fields not used by cows still count toward groups
+      }
     return group;
   }
-
 }
