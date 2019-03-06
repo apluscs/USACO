@@ -15,7 +15,8 @@ public class revegetate {
   public static int[] p, ranks;
   public static int N, M;
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) throws IOException { //union finds groups... forgot to check impossibility
+      //and count in fields unusued by cows
     try (BufferedReader in = new BufferedReader(new FileReader("revegetate.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("revegetate.out")));) {
       StringTokenizer st = new StringTokenizer(in.readLine());
