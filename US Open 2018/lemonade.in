@@ -1,0 +1,31 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+public class lemonade {
+  public static Integer[] nums;
+  public static int N;
+
+  public static void main(String[] args) throws IOException {
+    try (BufferedReader in = new BufferedReader(new FileReader("lemonade.in"));
+        PrintWriter out = new PrintWriter(new File("lemonade.out"));) {
+      N = Integer.parseInt(in.readLine());
+      nums = new Integer[N];
+      StringTokenizer st = new StringTokenizer(in.readLine());
+      for (int i = 0; i < N; i++)
+        nums[i] = Integer.parseInt(st.nextToken());
+      Arrays.sort(nums, (a, b) -> b - a); // most desperate at front
+      for (int i = 0; i < N; i++) { // i = #cows in line already
+        if (nums[i] >= i) // desperation exceeds #in line
+          continue;
+        out.println(i);
+        return; // if a semi desperate cow leaves, all less desperate cows will leave too
+      }
+      out.println(N); // all cows must wait in line
+    }
+  }
+}
