@@ -1,3 +1,5 @@
+//2018 US Open Contest, Gold  Problem 3. Talent Show 
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
