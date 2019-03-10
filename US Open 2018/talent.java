@@ -24,39 +24,38 @@ public class talent {
       int result = maxDensity();
       out.print(result);
     }
-
   }
 
   public static int maxDensity() {
     int result = 0;
     int[][] dp = new int[N + 1][W + 2]; // W: talent, W+1: weight
     for (int i = 1; i <= N; i++) {
-      int[] max = new int[] {0, 1};// for last column
-      for (int j = 1; j <= W; j++) {// will overwrite column W; ensures it at least
-                                    // inherits from above row
+      int[] max = new int[] {0, 1};// tracks best qualified group that can be added to nums[i]
+      for (int j = 1; j < W; j++) { // 1 ensures no divison by 0 error
         dp[i][j] = dp[i - 1][j];
         int needed = j - nums[i][1];
-        if (needed == 0)
+        if (needed == 0) // only need you to fill this weight
           dp[i][j] = Math.max(dp[i][j], nums[i][0]);
         else if (needed > 0 && dp[i - 1][needed] > 0)
           dp[i][j] = Math.max(dp[i][j], dp[i - 1][needed] + nums[i][0]);
-        if (j != W && j + nums[i][1] >= W) { // max tracks best qualified group
+        if (j + nums[i][1] >= W) {
           updateMax(max, dp[i - 1][j], j); // we get to last column after j loop
         }
       }
+
       if (dp[i - 1][W + 1] > 0) // found a valid group
-        updateMax(max, dp[i - 1][W], dp[i - 1][W + 1]); // real denom
+        updateMax(max, dp[i - 1][W], dp[i - 1][W + 1]); // real denom=dp[i-1][W+1], not j this time
       if (max[0] == 0)
-        max[1] = 0; // not updated at all
-      int[] best = findBest(max, nums[i]);
+        max[1] = 0; // not updated at all, adjust back for addition
+      int[] best = findBest(nums[i], new int[] {dp[i - 1][W], dp[i - 1][W + 1]});
       int[] added = new int[] {max[0] + nums[i][0], max[1] + nums[i][1]};
-      best = findBest(best, added);
+      best = findBest(best, added);//3 options: nums[i], row above, max+nums[i]
       dp[i][W] = best[0];
       dp[i][W + 1] = best[1];
-      if (dp[i][W] == 0) // update result
-        continue;
-      double temp = (double) dp[i][W] / dp[i][W + 1] * 1000;
-      result = Math.max(result, (int) temp);
+      if (dp[i][W] != 0) {        // update result
+        double temp = (double) dp[i][W] / dp[i][W + 1] * 1000;
+        result = Math.max(result, (int) temp);
+      }
     }
     return result;
   }
